@@ -14,22 +14,22 @@
   <div class="container-fluid">
     <!----provides full width container spanning entire width ---->
         <div class="row">
-            <div class="col-12 col-md-7">
+            <div class="col-22 col-md-12">
                 <div class="content">
   <h1>AKAN NAME GENERATOR</h1>
-  <p> The <strong>Akan people</strong> are a mete-ethnicity living primarily in the countries of the present day <strong>Ghana</strong> and <strong>Ivory coast</strong>.
+  <p> The <strong>Akan people</strong> are a meta-ethnicity living primarily in the countries of the present day <strong>Ghana</strong> and <strong>Ivory coast</strong>.
       The Akan people of Ghana frequently name their children after the day of the week they were born. For each day of the week, there is a name available for each gender
-  <p> This web application helps you know the day of the week you were born and your Akan name based on you birthday and gender </p>
+  <p> This web application helps you know the day of the week you were born and your Akan name based on you birthday and gender. </p>
   
 </div>
 <div id="results">
     <!--responsible for displaying results -->
     <div id="error" class="response">
-        <h2>To find out your Akan name Please enter your details below<strong>(should be valid)</strong>.</h2>
+        <h2>To find out your Akan name,Please fill the form below<strong>(should be valid)</strong>.</h2>
       </div>
     <!--responsible for displaying error message -->
     <form>
-            <div class="form-group col-md-1">
+            <div class="form-group col-md-2">
               <label for="DD"><strong>Date</strong></label>
               <input type="number" class="form-control" id="DD" min="1" max="31" placeholder="8" >
           </div>
@@ -38,7 +38,7 @@
       
             <select class="form-control" id="MM">
           
-                <option> March </option>
+                <option> month name</option>
           
                 <option>January</option>
                 <option>February</option>
@@ -57,19 +57,19 @@
               <label for="YY"><strong>Year</strong></label>
               <input type="number" class="form-control" id="YY" min="0000" max="2023" placeholder="2022">
             </div>
+            
+            <div class="gender">
             <label for="gender">
-              <p>What is your Gender ?.: </p>
-                Male
-              <input id="male-input" type="radio" name="gender" value="male" required>
-                 Female
-              <input id="female-input" type="radio" name="gender" value="female" required>
-
-
+              <p><strong>Select your Gender</strong>:</p>
+            MALE
+              <input id="male-input" type="checkbox" name="gender" value="male" required>
+            FEMALE
+              <input id="female-input" type="checkbox" name="gender" value="female" required>
             </label>          
-            <input id="get-name" type="submit" name="" value="Generate name"> 
+          </div>
+          <h3> click the button below to generate your Akan name </h3>
+            <input id="get-name" type="submit" name="" value="What is my Akan name ?"> 
           </form>
-          <form onsubmit="return clearInput()">
-            <input class="clear" type="submit" value="Clear input">
           </form>
            
 

@@ -1,14 +1,39 @@
 body {
    background-color:#C7AA74;
-   font-size: large;
+   font-size:large;
+   font-family:serif;
 }
   h1 {
-    text-align:right;
+    text-align:center;
     color:#0E0004;
+    font-size:xx large;
+    font-family:serif;
+    padding-top:10;
   }
-  h2{
+  h2 {
     color:#0E0004
   }
 strong {
   color:#0E0004
+  font-family:serif;
 }
+h3{
+  font-size:large;
+  font-family:monospace;
+}
+.gender{
+  position:relative;
+  text-align:center;
+  text-size :large;
+  font-size:large;
+  font-family:sans-serif;
+  padding-top:10;
+}
+.container-fluid{
+  padding:10;
+}
+.form-group {
+  border-radius: 5px;
+  text-align:center;
+
+} 
