@@ -25,7 +25,7 @@
 <div id="results">
     <!--responsible for displaying results -->
     <div id="error" class="response">
-        <h2>Please enter your birth details <strong>(should be valid)</strong>.</h2>
+        <h2>To find out your Akan name Please enter your details below<strong>(should be valid)</strong>.</h2>
       </div>
     <!--responsible for displaying error message -->
     <form>
@@ -57,5 +57,23 @@
               <label for="YY"><strong>Year</strong></label>
               <input type="number" class="form-control" id="YY" min="0000" max="2023" placeholder="2022">
             </div>
+            <label for="gender">
+              <p>What is your Gender ?.: </p>
+                Male
+              <input id="male-input" type="radio" name="gender" value="male" required>
+                 Female
+              <input id="female-input" type="radio" name="gender" value="female" required>
+
+
+            </label>          
+            <input id="get-name" type="submit" name="" value="Generate name"> 
+          </form>
+          <form onsubmit="return clearInput()">
+            <input class="clear" type="submit" value="Clear input">
+          </form>
+           
+
+        </div>
+      </div>
     </body>
 </html>
