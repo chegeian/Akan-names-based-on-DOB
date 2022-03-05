@@ -1,4 +1,14 @@
 body {
-   background-color:#D4B483;
+   background-color:#C7AA74;
+   font-size: large;
 }
-  
+  h1 {
+    text-align:right;
+    color:#0E0004;
+  }
+  h2{
+    color:#0E0004
+  }
+strong {
+  color:#0E0004
+}
