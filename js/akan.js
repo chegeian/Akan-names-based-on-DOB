@@ -1,16 +1,18 @@
+
 function getAkanName () {
 
-  var DD= document.getElementById("DD").Value;
-  var MM= document.getElementById("MM").value;
-  var YY= document.getElementById("YY").value;
-  var gender= document.getElementsByName("gender")
-  var MALE= document.getElementById("male-input").checked; 
-	var FEMALE = document.getElementById("female-input").checked;
-	var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
-	var maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]; s
-	var femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"]; 
-	var birthDate = new Date(MM + '/' + DD + '/' + YY);
-	var dayOfTheWeek = birthDate.getDay();
+  let DD= document.getElementById("DD").Value;
+  let MM= document.getElementById("MM").value;
+  let YY= document.getElementById("YY").value;
+  let gender= document.getElementsByName("gender")
+  let MALE= document.getElementById("male-input").checked; 
+	let FEMALE = document.getElementById("female-input").checked;
+	let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
+	let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]; s
+	let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"]; 
+	let birthDate = new Date(dateOfBirth);
+    
+	let dayOfTheWeek =  (((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7;
 
 
   if (DD <= 0 || DD > 31) { 
