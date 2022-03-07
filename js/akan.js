@@ -12,7 +12,7 @@ function getAkanName () {
 	let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"]; 
 	let birthDate = new Date(dateOfBirth);
     
-	let dayOfTheWeek =  (((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7;
+	let dayOfTheWeek =  (((20 / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7;
 
 
   if (DD <= 0 || DD > 31) { 
