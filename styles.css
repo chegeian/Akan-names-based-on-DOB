@@ -22,7 +22,7 @@ h3{
   font-family:monospace;
 }
 .gender{
-  position:relative;
+  position:static;
   text-align:center;
   text-size :large;
   font-size:large;
@@ -37,3 +37,7 @@ h3{
   text-align:center;
 
 } 
+.footer{
+position:fixed;
+font-size: large;
+}
