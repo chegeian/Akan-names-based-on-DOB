@@ -3,9 +3,9 @@ function getAkanName () {
   var DD= document.getElementById("DD").Value;
   var MM= document.getElementById("MM").value;
   var YY= document.getElementById("YY").value;
-  var gender = document.getElementsByName("gender")
-  var MALE= document.getElementById("male").checked; 
-	var FEMALE = document.getElementById("female").checked;
+  var gender= document.getElementsByName("gender")
+  var MALE= document.getElementById("male-input").checked; 
+	var FEMALE = document.getElementById("female-input").checked;
 	var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
 	var maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]; s
 	var femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"]; 
