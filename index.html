@@ -19,7 +19,7 @@
   <h1>AKAN NAME GENERATOR</h1>
   <p> The <strong>Akan people</strong> are a meta-ethnicity living primarily in the countries of the present day <strong>Ghana</strong> and <strong>Ivory coast</strong>.
       The Akan people of Ghana frequently name their children after the day of the week they were born. For each day of the week, there is a name available for each gender
-  <p> This web application helps you know the day of the week you were born and your Akan name based on your birthday and gender. </p>
+  <p> This web application helps you know the day of the week you were born and your Akan name based on you birthday and gender. </p>
   
 </div>
 <div id="results">
@@ -28,52 +28,46 @@
         <h2>To find out your Akan name,Please fill the form below<strong>(should be valid)</strong>.</h2>
       </div>
     <!--responsible for displaying error message -->
-    <form>
-            <div class="form-group col-md-2">
-              <label for="DD"><strong>Date</strong></label>
-              <input type="number" class="form-control" id="DD" min="1" max="31" placeholder="8" >
-          </div>
-          <div class="form-group col-md-2">
-            <label for="MM"><strong>Month</strong></label>
-      
-            <select class="form-control" id="MM">
-            <option>------</option>
-            <!----acts as a placeholder----> 
-                <option>January</option>
-                <option>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
+       <form onsubmit="return false">
+        <div>
+            Date: <br>
+        <input type="number" class="form-group" id="date" placeholder="DD">
+        </div><br>
+        <div>
+            Month: <br>
+            <input type="number" class="form-group" id="month" placeholder="MM">
+        </div><br>
+        <div>
+            Year: <br>
+            <input type="number" class="form-group" id="year" placeholder="YY">
+        </div><br>
+
+        
+        <div>
+            <p><strong>Select your Gender</strong>:</p>
+            <select class="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
             </select>
-            <div class="form-group">
-              <label for="YY"><strong>Year</strong></label>
-              <input type="number" class="form-control" id="YY" min="0000" max="2023" placeholder="2022">
-            </div>
+        </div> 
+        <h3> click the button below to generate your Akan name </h3> 
+        <div>
+            <input type="submit" class="button" onclick="generateName()" value="What is my Akan name">
             
-            <div class="gender">
-            <label for="gender">
-              <p><strong>Select your Gender</strong>:</p>
-            MALE
-              <input id="male-input" type="radio" name="gender" value="male" required>
-            FEMALE
-              <input id="female-input" type="radio" name="gender" value="female" required>
-            </label>          
-          </div>
-          <h3> click the button below to generate your Akan name </h3>
-            <input id="get-name" type="submit" name="" value="What is my Akan name ?" onclick="getAkanName()"> 
-        </form>
-        <div class="footer">
-          Developed by Chege Ian &copy; 2022
         </div>
-        </div>
-      </div>
-      <script src="/js/akan.js"></script>
-    </body>
+    </form>
+</div>
+</div>
+
+<div>
+<p class="results"> 
+   <strong> Your Akan name is ....</strong> <span id="akan"></span>
+</p>
+</div>
+</div>
+<script src="./js/akan.js"></script>
+<div class="footer">
+    Developed by Chege Ian &copy; 2022
+  </div>
+</body>
 </html>

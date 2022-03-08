@@ -22,12 +22,13 @@ h3{
   font-family:monospace;
 }
 .gender{
-  position:static;
+  position:relative;
   text-align:center;
   text-size :large;
   font-size:large;
   font-family:sans-serif;
   padding-top:10;
+  padding-bottom: 0;
 }
 .container-fluid{
   padding:10;

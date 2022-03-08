@@ -1,54 +1,37 @@
+function generateName(){
+	let date = document.getElementById("date").value;
 
-function getAkanName () {
+	let month = document.getElementById("month").value;
 
-  let DD= document.getElementById("DD").Value;
-  let MM= document.getElementById("MM").value;
-  let YY= document.getElementById("YY").value;
-  let gender= document.getElementsByName("gender")
-  let MALE= document.getElementById("male-input").checked; 
-	let FEMALE = document.getElementById("female-input").checked;
-	let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
-	let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"]; s
-	let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"]; 
-	let birthDate = new Date(dateOfBirth);
-    
-	let dayOfTheWeek =  (((20 / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7;
+	let year = document.getElementById("year").value;
 
+	let gender = document.getElementById("gender").value;
 
-  if (DD <= 0 || DD > 31) { 
-		document.getElementById("error").innerText = "Please enter a valid date!" 
+	let century = year.slice(0,2);
 
-}else if ((MM === "September" || MM === "April" || MM === "June" || MM === "November") && (DD <= 0 || DD > 30)) {
-document.getElementById("error").innerText = "Please enter a valid date!" 
+	let yearName = year.slice(2,4);
 
-}else if (MM === "------") { 
-  document.getElementById("error").innerText = "Please select a month!" 
+	let day = ( ( (century/4) -2*yearName-1) + ((5*yearName/4) ) + ((26*(month+1)/10)) + date ) % 7;
+	
+	day = Math.floor(day)
+	
+	var maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 
-} else if (YY <= 0 || YY > 2022) { "entered is valid and doesn't exceed 2022"
-  document.getElementById("error").innerText = "Please enter a valid year!"
+	var femaleNames = ["Akosu", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Amna"];
 
-} else if ((MM=== "February") && (DD <= 0 || DD> 29) && (0 == YY % 4)) { 
-  document.getElementById("error").innerText = "Please enter a valid date!"
-
-} else if ((MM === "February") && (DD <= 0 || DD> 28) && (0 != YY% 4)) {  
-  document.getElementById("error").innerText = "Please enter a valid date!" 
-  
-} else if (MALE === true) { 
-    document.getElementById("result").innerHTML = "You were born on a " + days[dayOfTheWeek] + ".\n" + "Your Akan name is " + maleNames[dayOfTheWeek] + "!" //shows result by replacing the  HTML content in the id=result
-  document.getElementById("result").style.color = "MediumBlue"
-  document.getElementById("result").style.padding = "10% 12% 10% 12%"
-  document.getElementById("result").style.fontSize = "35px"
-  document.getElementById("result").style.fontFamily = "monospace"
-  document.getElementById("result").style.textAlign = "center"
-} else if (FEMALE === true) { 
-  document.getElementById("result").innerHTML = "You were born on a " + days[dayOfTheWeek] + ".\n" + "Your Akan name is " + femaleNames[dayOfTheWeek] + "!" //shows result by replacing the HTML content in the id=result
-  document.getElementById("result").style.color = "DeepPink"
-  document.getElementById("result").style.padding = "10% 12% 10% 12%"
-  document.getElementById("result").style.fontSize = "35px"
-  document.getElementById("result").style.fontFamily = "monospace"
-  document.getElementById("result").style.textAlign = "center"
-} else if ((FEMALE === false) && (MALE === false)) { 
-  document.getElementById("error").innerText = "Please select gender!"
-  
-}
+	if (gender === "male"){
+			document.getElementById("akan").innerHTML = maleNames[day - 1]
+	}
+	else{
+			document.getElementById("akan").innerHTML= femaleNames[day - 1]
+	}
+	if(date <= 0 || date > 31){
+			alert("The date entered is invalid")
+	}
+	else if(month <= 0 || month > 12){
+			alert("The month entered is invalid")
+	}
+	else if(year < 1000 || year >= 9999){
+			alert("The year entered is invalid")
+	}
 }
