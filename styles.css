@@ -2,6 +2,9 @@ body {
    background-color:#C7AA74;
    font-size:large;
    font-family:serif;
+   background-image: url('../images/background.jpg');
+   background-color: antiquewhite;
+   color: blue;
 }
   h1 {
     text-align:center;
@@ -51,3 +54,8 @@ h3{
   justify-content: center;
   font-style: italic;
   font-weight: 700;
+
+.img{
+  float: left: ;;
+}
+
