@@ -1,98 +1,100 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-</html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <!--character encoding for Unicode -->
-    <title>Akan Name Generator</title>
-    <link href="https://fonts.googleapis.com/css?family=Kalam|Libre+Baskerville&result=swap" rel="stylesheet">
-    <!--allows for importing of google fonts -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!--allows for importing of fontawesome icons -->
-    <link href="styles.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <div class="container-fluid">
-        <div class="jumbotron">
-            <div class="row">
-                <div class="col-12 col-md-7">
-                    <div class="content">
-                        <h1>AKAN NAME GENERATOR</h1>
-                        <img src="ghana.png" alt="The flag of Ghana" class="square" width="70" height="70">
-                        <p> The <strong>Akan people</strong> are a meta-ethnicity living primarily in the countries of the present day <strong>Ghana</strong> and <strong>Ivory coast</strong>.
-                            The Akan people of Ghana frequently name their children after the day of the week they were born. For each day of the week, there is a name available for each gender
-                        <p> This web application helps you know the day of the week you were born and your Akan name based on you birthday and gender. </p>
-                    </div>
-                    <div id="result">
-                        <!--div responsible for displaying results -->
-                        <div id="error" class="response">
-                            <h6><b>Please enter your birth details.</b></h6>
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-1"></div>
-                                <div class="form-group col-md-1 calendar">
-                                    <span class="input-group-addon" style="font-size:24px; color: rgb(64, 116, 212)"><i class="fa fa-calendar"></i></span>
-                
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <label for="dd"><b>Date</b></label>
-                                    <input type="number" class="form-control" id="dd" placeholder="1" min="1" max="31" required>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="mm"><b>Month</b></label>
-                
-                                    <select class="form-control" id="mm">
-                                    
-                                        <option>------</option>
-                                        <option>January</option>
-                                        <option>February</option>
-                                        <option>March</option>
-                                        <option>April</option>
-                                        <option>May</option>
-                                        <option>June</option>
-                                        <option>July</option>
-                                        <option>August</option>
-                                        <option>September</option>
-                                        <option>October</option>
-                                        <option>November</option>
-                                        <option>December</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="yy"><b>Year</b></label>
-                                    <!--label for year input box-->
-                                    <input type="number" class="form-control" id="yy" placeholder="2020" min="1" max="2020" required>
-                                </div>
-                                <div class="form-group col-md-1"></div>
-                            </div>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AkanNameGenerator</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 
-                            <div class="form-group">
-                                <label class="label">What's your gender?</label>
-                                <!--label for gender radios -->
-                                <div class="rdio rdio-default">
-                                    <input type="radio" name="gender" id="male" value="Male">
-                                    <label for="male">&nbsp;&nbsp;<b>Male</b></label>
-                                </div>
-                                <div class="rdio rdio-default">
-                                    <input type="radio" name="gender" id="female" value="Female">
-                                    <label for="female">&nbsp;&nbsp;<b>Female</b></label>
-                                </div>
-                            </div>
-                            <div class="button">
-                                <button type="submit" onclick="readData(); return false;" class="btn btn-primary btn-xs"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;What is my Akan Name</button>
-                            </div>
-                        </form>
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Josefin+Sans:wght@100&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    
+    <h2 class="first-header">THE AKAN NAME GENERATOR</h2>
+  
+    <div class="container-fluid main-div">
+        <!--Short description about the application-->
+        <div class="container intro">
+            <p>Akan names are derived from the Ghanian culture.</p>
+            <p>Frequently in Ghana, children are given their first name based on their gender as
+                well as a 'day name' which corresponds to the day in the week they
+                were born.</p>
+            <p>All we need is your date of birth, let's have some fun &#128541;.</p>
+        </div>
+
+        <!--Input form-->
+        <div class="container form-center">
+            <form id="akan-form" class="akan-form" name="akan-form">
+                <h3>Enter data here.</h3>
+                <div class="mb-3 form-item row">
+                    <label for="day" class="col-form-label col-sm-4">Day</label>
+                    <input type="number" onkeyup="validateDay()" maxlength="2" name="day" class="form-control col-sm-8" id="day" aria-describedby="day of birth" placeholder="12">
+                    <span id="day-error" class="error" role=""></span>
+                </div>
+                <div class="mb-3 form-item row">
+                    <label for="month" class="col-form-label col-sm-4">Month</label>
+                    <input type="number" onkeyup="validateMonth()" maxlength="2" class="form-control col-sm-8" id="month" aria-describedby="month of birth" placeholder="4">
+                    <span id="month-error" class="error" role=""></span>
+                </div>
+                <div class="mb-3 form-item row">
+                    <label for="year" class="col-form-label col-sm-4">Year</label>
+                    <input type="number" onkeyup="validateYear()" maxlength="4" required class="form-control col-sm-8" id="year" aria-describedby="year of birth" placeholder="1980">
+                    <span id="year-error" class="error" role=""></span>
+                </div>
+                <div class="d-flex">
+                    <div class="align-self-center mx-auto">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="male">
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                        <span id="gender-error" class="error" role=""></span>
+                    </div><br>
+                </div>
+                <div class="d-flex">
+                    <div class="align-self-center mx-auto">
+                        <button type="button" class="btn btn-primary" onclick="akanName()">Search</button>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <div class=container>
-                        <div class="bottom-left"> &copy; Developed by chege 2022 All Rights Reserved.</div>
-                    </div>
+            </form>
+        </div>
+
+        <!--Display akan name -->
+        <div class="container display">
+            <h1 id="display-name"></h1>
+            <div class="d-flex">
+                <div class="align-self-center mx-auto">
+                    <a href="index.html" class="btn btn-primary">Reload</a>
                 </div>
             </div>
         </div>
     </div>
-    <script src="js/akan.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/js/akan.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

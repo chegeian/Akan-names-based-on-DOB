@@ -1,61 +1,93 @@
-body {
-   background-color:#C7AA74;
-   font-size:large;
-   font-family:serif;
-   background-image: url('../images/background.jpg');
-   background-color: antiquewhite;
-   color: blue;
+body{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  font-size: large;
+  font-weight: bold;
 }
-  h1 {
-    text-align:center;
-    color:#0E0004;
-    font-size:xx large;
-    font-family:serif;
-    padding-top:10;
-  }
-  h2 {
-    color:#0E0004
-  }
-strong {
-  color:#0E0004
-  font-family:serif;
+
+p{
+  padding: 0 20vw;
 }
+
 h3{
-  font-size:large;
-  font-family:monospace;
+  text-align: center;
+  font-weight: bold;
 }
-.gender{
-  position:relative;
-  text-align:center;
-  text-size :large;
-  font-size:large;
-  font-family:sans-serif;
-  padding-top:10;
-  padding-bottom: 0;
-}
-.container-fluid{
-  padding:10;
-}
-.form-group {
-  border-radius: 5px;
-  text-align:center;
- 
-} 
-.footer{
-  height: 50px;
-  width: 100%;
-  background-color: #333;
-  display: inline-flex;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 7px;
+
+.btn{
+  background-color: #11999E;
   color: white;
-  align-items: center;
-  justify-content: center;
-  font-style: italic;
-  font-weight: 700;
-
-.img{
-  float: left: ;;
+  font-weight: bolder;
+  width: 20vw;
+  padding: 0 4px;
+  margin: 16px 0;
 }
 
+.btn:hover{
+  background-color: #E4F9F5;
+  color: black;
+}
+
+/*Navbar styling*/
+.icon{
+  height:15vh;
+  width: 12vw;
+}
+
+/*Intro styling*/
+.intro{
+  text-align: center;
+  margin-top: 1vh;
+}
+
+.first-header{
+  font-family: 'Dancing Script', cursive;
+  font-weight: bolder;
+  font-size: 3em;
+  color: white;
+  text-align: center !important;
+  background-color: #11999E;
+  padding: 5px;
+}
+
+/* Form styling */
+.form-center{
+  display:flex;
+  justify-content: center;
+}
+
+.akan-form{
+  background-color: #E4F9F5;
+  padding: 2vw 4vw;
+}
+
+.form-control{
+  font-weight: bold;
+}
+
+/* Display section name */
+.error  {
+  color: #11999E;
+  padding: 2px;
+  text-align: left;
+}
+
+#display-name{
+  text-align: center;
+  font-weight: bolder;
+  font-kerning: auto;
+  font-size: 4em !important;
+  padding: 0 32px;
+  animation-name: display;
+  animation-delay: 0;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes display{
+  0%{color: #03045E;}
+  25%{color: #00B4D8; transition: cubic-bezier(0.075, 0.82, 0.165, 1);}
+  50%{color: #90E0EF;}
+  75%{color: #00B4D8;}
+  100%{color: #03045E;}
+}
